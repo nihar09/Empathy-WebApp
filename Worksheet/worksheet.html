@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Worksheet</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+     <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  function timeout()
+      {
+        //var minute=Math.floor((timeLeft-(hours*60*60))/60);
+        var minute=Math.floor(timeLeft/60);
+        var second=timeLeft%60;
+        //var hrs=checktime(hours);
+        var mint=checktime(minute);
+        var sec=checktime(second);
+        if(timeLeft<0)
+        {
+            clearTimeout(tm);
+            document.getElementById("b1").disabled = true;
+  			document.getElementById("a1").disabled = true;
+
+
+            document.getElementById("s1").disabled = true;  
+
+            
+  			document.getElementById("tf1").disabled = true;
+            
+            
+  			document.getElementById("tf2").disabled = true;
+            
+            
+  			document.getElementById("tf3").disabled = true;
+            
+            
+  			document.getElementById("tf4").disabled = true;
+            
+            
+  			document.getElementById("tf5").disabled = true;
+
+        
+        document.getElementById("tf6").disabled = true;
+        document.getElementById("s2").disabled = true;
+        check();
+        submit();
+            document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+            document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+            document.getElementById("coins").hidden = false;
+            document.getElementById("drop").play();
+             document.getElementById("my_audio").pause();
+            document.getElementById("my_end").play();
+            delay(5000);
+            document.getElementById("my_end").pause();
+        }
+        else
+        {
+            document.getElementById("time").innerHTML=mint+":"+sec;
+        }
+        timeLeft--;
+        var tm=setTimeout(function(){timeout()},1000);
+      }
+      function checktime(msg)
+      {
+        if(msg<10)
+        {
+            msg="0"+msg;
+        }
+        return msg;
+      }
+</script>
+    <style type="text/css">
+      body{
+         background-color: #fff9f4;
+      }
+    	input[type=text], select {
+  		width: 13%;
+  		padding: 8px 16px;
+  		margin: 8px 0;
+  		display: inline-block;
+  		border: 1px solid #ccc;
+  		border-radius: 4px;
+  		box-sizing: border-box;
+  		text-align: center;
+  		font-size: 12pt;
+  		font-family: "Comic Sans MS", "Comic Sans", cursive;
+	}
+
+	.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 1px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  border-radius: 20px;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button1:hover {
+  background-color: #555555;
+  color: white;
+}
+
+
+	.ml6 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml6 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml6 .letter {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml62 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml62 .text-wrapper2 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml62 .letter2 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml63 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml63 .text-wrapper3 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml63 .letter3 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml64 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml64 .text-wrapper4 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml64 .letter4 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml65 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml65 .text-wrapper5 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml65 .letter5 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml66 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml66 .text-wrapper6 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml66 .letter6 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml67 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml67 .text-wrapper7 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml67 .letter7 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml68 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml68 .text-wrapper8 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml68 .letter8 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml69 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml69 .text-wrapper9 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml69 .letter9 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml610 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml610 .text-wrapper10 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml610 .letter10 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml611 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml611 .text-wrapper11 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml611 .letter11 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml612 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml612 .text-wrapper12 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml612 .letter12 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml613 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml613 .text-wrapper13 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml613 .letter13 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml614 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml614 .text-wrapper14 {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml614 .letter14 {
+  display: inline-block;
+  line-height: 1em;
+  color: green;
+  font-size: 20pt;
+}
+
+.ml2 {
+  font-weight: bold;
+  font-size: 35pt;
+}
+
+.ml2 .letter {
+  display: inline-block;
+  line-height: 1em;
+  font-size: 35pt;
+}
+
+.card-header{
+  background-color: #FFAE77;
+}
+
+div.angrytext {
+ font-size:70px;
+ font-weight:bold;
+ color:#4794D3;
+ width:300px;
+ margin:90px auto;
+
+ -webkit-animation: alert 2s linear 0s infinite normal ;
+ animation: alert 2s linear 0s infinite normal ;
+}
+
+@-webkit-keyframes alert {
+  0%{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  5%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  10%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  15%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  20%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  25%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  30%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  35%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  40%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  45%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  50%{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+}
+
+@keyframes alert {
+  0%{
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  }
+  5%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  10%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  15%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  20%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  25%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  30%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  35%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  40%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  45%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  50%{
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  }
+}
+
+div.angrytime {
+ -webkit-animation: alert 2s linear 0s infinite normal ;
+ animation: alert 2s linear 0s infinite normal ;
+}
+
+@-webkit-keyframes alert {
+  0%{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  5%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  10%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  15%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  20%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  25%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  30%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  35%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  40%{
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  45%{
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  50%{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+}
+
+@keyframes alert {
+  0%{
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  }
+  5%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  10%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  15%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  20%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  25%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  30%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  35%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  40%{
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  }
+  45%{
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  }
+  50%{
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  }
+}
+    </style>
+    <script type="text/javascript">
+    	var score = 0;
+    	function check1()
+    	{
+    		if(document.getElementById("a1").value == "empathy")
+    		{
+    			score++;
+    			document.getElementById("scoring").innerHTML = "Your Score is " + score;
+    			document.getElementById("ans1").innerHTML = "Correct";
+    			// Wrap every letter in a span
+				$('.ml6 .letters').each(function(){
+  				$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				anime.timeline({loop: true})
+  				.add({
+    			targets: '.ml6 .letter',
+    			translateY: ["1.1em", 0],
+    			translateZ: 0,
+    			duration: 750,
+    			delay: function(el, i) {
+      			return 50 * i;
+    			}
+  				}).add({
+    			targets: '.ml6',
+    			opacity: 0,
+   	 			duration: 1000,
+    			easing: "easeOutExpo",
+    			delay: 1000
+  				});
+  				document.getElementById("b1").disabled = true;
+  				document.getElementById("a1").disabled = true;
+  				if(score == 13)
+		{
+			// Wrap every letter in a span
+			document.getElementById("congrats").innerHTML = "Congratulations You solved the worksheet correct";
+      document.getElementById("part1").hidden = false;
+            document.getElementById("goodjob").hidden = false;
+            document.getElementById("part2").hidden = false;
+			$('.ml2').each(function(){
+  			$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+			});
+
+			anime.timeline({loop: true})
+  			.add({
+    		targets: '.ml2 .letter',
+    		scale: [4,1],
+    		opacity: [0,1],
+    		translateZ: 0,
+    		easing: "easeOutExpo",
+    		duration: 950,
+    		delay: function(el, i) {
+      		return 70*i;
+    		}
+  			}).add({
+    		targets: '.ml2',
+    		opacity: 0,
+    		duration: 1000,
+    		easing: "easeOutExpo",
+    		delay: 1000
+  			});
+        document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+            document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+            document.getElementById("coins").hidden = false;
+            document.getElementById("my_audio").pause();
+      setTimeout(function(){ 
+      document.getElementById("drop").play(); 
+      }, 1000)
+		}
+    		}
+    		else
+    		{
+    			var str = "<h6>Oops! The answer is Incorrect!! Try again.</h6>";
+        		var res = str.fontcolor("red");
+        		document.getElementById("ans1").innerHTML = res;
+    		}
+    	}
+
+    	function check()
+    {
+      document.getElementById("a11").disabled = true;
+      document.getElementById("a12").disabled = true;
+      document.getElementById("a21").disabled = true;
+      document.getElementById("a22").disabled = true;
+      document.getElementById("a31").disabled = true;
+      document.getElementById("a32").disabled = true;
+      document.getElementById("a41").disabled = true;
+      document.getElementById("a42").disabled = true;
+      document.getElementById("a43").disabled = true;
+      document.getElementById("a44").disabled = true;
+      document.getElementById("a45").disabled = true;
+      document.getElementById("a46").disabled = true;
+      document.getElementById("a51").disabled = true;
+      document.getElementById("a52").disabled = true;
+      document.getElementById("a61").disabled = true;
+      document.getElementById("a62").disabled = true;
+      document.getElementById("a63").disabled = true;
+      document.getElementById("a64").disabled = true;
+      document.getElementById("s1").disabled = true;
+
+      var q1 = document.myform.q1.value;
+      var q2 = document.myform.q2.value;
+      var q3 = document.myform.q3.value;
+      var q4 = document.myform.q4.value;
+      var q5 = document.myform.q5.value;
+      var q6 = document.myform.q6.value;
+  
+      if(q1 == "a")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        document.getElementById("ans2").innerHTML = "Correct";
+        // Wrap every letter in a span
+        $('.ml62 .letters2').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter2'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+          targets: '.ml62 .line2',
+          scaleX: [0,1],
+          opacity: [0.5,1],
+          easing: "easeInOutExpo",
+          duration: 900
+          }).add({
+          targets: '.ml62 .letter2',
+          opacity: [0,1],
+          translateX: [40,0],
+          translateZ: 0,
+          scaleX: [0.3, 1],
+          easing: "easeOutExpo",
+          duration: 800,
+          offset: '-=600',
+          delay: function(el, i) {
+            return 150 + 25 * i;
+          }
+          }).add({
+          targets: '.ml62',
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+          });
+      }
+      else
+      {
+        var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is Stronger</h6>";
+        var res = str.fontcolor("red");
+        document.getElementById("ans2").innerHTML = res;
+      }
+
+      if(q2 == "a")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        document.getElementById("ans3").innerHTML = "Correct";
+        // Wrap every letter in a span
+        $('.ml63 .letters3').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter3'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+          targets: '.ml63 .line3',
+          scaleX: [0,1],
+          opacity: [0.5,1],
+          easing: "easeInOutExpo",
+          duration: 900
+          }).add({
+          targets: '.ml63 .letter3',
+          opacity: [0,1],
+          translateX: [40,0],
+          translateZ: 0,
+          scaleX: [0.3, 1],
+          easing: "easeOutExpo",
+          duration: 800,
+          offset: '-=600',
+          delay: function(el, i) {
+            return 150 + 25 * i;
+          }
+          }).add({
+          targets: '.ml63',
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+          });
+      }
+      else
+      {
+        var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is I feel your pain</h6>";
+        var res = str.fontcolor("red");
+        document.getElementById("ans3").innerHTML = res;
+      }
+
+      if(q3 == "b")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        document.getElementById("ans4").innerHTML = "Correct";
+        // Wrap every letter in a span
+        $('.ml64 .letters4').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter4'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+          targets: '.ml64 .line4',
+          scaleX: [0,1],
+          opacity: [0.5,1],
+          easing: "easeInOutExpo",
+          duration: 900
+          }).add({
+          targets: '.ml64 .letter4',
+          opacity: [0,1],
+          translateX: [40,0],
+          translateZ: 0,
+          scaleX: [0.3, 1],
+          easing: "easeOutExpo",
+          duration: 800,
+          offset: '-=600',
+          delay: function(el, i) {
+            return 150 + 25 * i;
+          }
+          }).add({
+          targets: '.ml64',
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+          });
+      }
+      else
+      {
+        var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is Empathetic</h6>";
+        var res = str.fontcolor("red");
+        document.getElementById("ans4").innerHTML = res;
+      }
+
+      if(q4 == "f")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        document.getElementById("ans5").innerHTML = "Correct";
+        // Wrap every letter in a span
+        $('.ml65 .letters5').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter5'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+          targets: '.ml65 .line5',
+          scaleX: [0,1],
+          opacity: [0.5,1],
+          easing: "easeInOutExpo",
+          duration: 900
+          }).add({
+          targets: '.ml65 .letter5',
+          opacity: [0,1],
+          translateX: [40,0],
+          translateZ: 0,
+          scaleX: [0.3, 1],
+          easing: "easeOutExpo",
+          duration: 800,
+          offset: '-=600',
+          delay: function(el, i) {
+            return 150 + 25 * i;
+          }
+          }).add({
+          targets: '.ml65',
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+          });
+      }
+      else
+      {
+        var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is All of the above</h6>";
+        var res = str.fontcolor("red");
+        document.getElementById("ans5").innerHTML = res;
+      }
+
+      if(q5 == "a")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        document.getElementById("ans6").innerHTML = "Correct";
+        // Wrap every letter in a span
+        $('.ml66 .letters6').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter6'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+          targets: '.ml66 .line6',
+          scaleX: [0,1],
+          opacity: [0.5,1],
+          easing: "easeInOutExpo",
+          duration: 900
+          }).add({
+          targets: '.ml66 .letter6',
+          opacity: [0,1],
+          translateX: [40,0],
+          translateZ: 0,
+          scaleX: [0.3, 1],
+          easing: "easeOutExpo",
+          duration: 800,
+          offset: '-=600',
+          delay: function(el, i) {
+            return 150 + 25 * i;
+          }
+          }).add({
+          targets: '.ml66',
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+          });
+      }
+      else
+      {
+        var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is Blessed to have friends who think about me.</h6>";
+        var res = str.fontcolor("red");
+        document.getElementById("ans6").innerHTML = res;
+      }     
+
+      if(q6 == "c")
+      {
+        score++;
+        document.getElementById("scoring").innerHTML = "Your Score is " + score;
+        document.getElementById("ans7").innerHTML = "Correct";
+        // Wrap every letter in a span
+        $('.ml67 .letters7').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter7'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+          targets: '.ml67 .line7',
+          scaleX: [0,1],
+          opacity: [0.5,1],
+          easing: "easeInOutExpo",
+          duration: 900
+          }).add({
+          targets: '.ml67 .letter7',
+          opacity: [0,1],
+          translateX: [40,0],
+          translateZ: 0,
+          scaleX: [0.3, 1],
+          easing: "easeOutExpo",
+          duration: 800,
+          offset: '-=600',
+          delay: function(el, i) {
+            return 150 + 25 * i;
+          }
+          }).add({
+          targets: '.ml67',
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+          });
+      }
+      else
+      {
+        var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is Understanding</h6>";
+        var res = str.fontcolor("red");
+        document.getElementById("ans7").innerHTML = res;
+      }
+      if(score == 13)
+    {
+      // Wrap every letter in a span
+      document.getElementById("congrats").innerHTML = "Congratulations You solved the worksheet correct";
+      document.getElementById("part1").hidden = false;
+            document.getElementById("goodjob").hidden = false;
+            document.getElementById("part2").hidden = false;
+      $('.ml2').each(function(){
+        $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+      });
+
+      anime.timeline({loop: true})
+        .add({
+        targets: '.ml2 .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: function(el, i) {
+          return 70*i;
+        }
+        }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+        });
+        document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+            document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+            document.getElementById("coins").hidden = false;
+    }
+  }
+
+    	function submit()
+    	{
+        document.getElementById("s2").disabled = true;
+    		if(document.getElementById("tf1").value == "false")
+    		{
+    			score++;
+    			document.getElementById("scoring").innerHTML = "Your Score is " + score;
+    			document.getElementById("ans8").innerHTML = "Correct";
+    			// Wrap every letter in a span
+				$('.ml69 .letters9').each(function(){
+  				$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter9'>$&</span>"));
+				});
+
+				anime.timeline({loop: true})
+  				.add({
+    			targets: '.ml69 .letter9',
+    			translateY: ["1.1em", 0],
+    			translateZ: 0,
+    			duration: 750,
+    			delay: function(el, i) {
+      			return 50 * i;
+    			}
+  				}).add({
+    			targets: '.ml69',
+    			opacity: 0,
+   	 			duration: 1000,
+    			easing: "easeOutExpo",
+    			delay: 1000
+  				});
+  				document.getElementById("tf1").disabled = true;
+    		}
+    		else
+    		{
+    			var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is false.</h6>";
+        		var res = str.fontcolor("red");
+        		document.getElementById("ans8").innerHTML = res;
+    		}
+
+    	
+    		if(document.getElementById("tf2").value == "false")
+    		{
+    			score++;
+    			document.getElementById("scoring").innerHTML = "Your Score is " + score;
+    			document.getElementById("ans9").innerHTML = "Correct";
+    			// Wrap every letter in a span
+				$('.ml610 .letters10').each(function(){
+  				$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter10'>$&</span>"));
+				});
+
+				anime.timeline({loop: true})
+  				.add({
+    			targets: '.ml610 .letter10',
+    			translateY: ["1.1em", 0],
+    			translateZ: 0,
+    			duration: 750,
+    			delay: function(el, i) {
+      			return 50 * i;
+    			}
+  				}).add({
+    			targets: '.ml610',
+    			opacity: 0,
+   	 			duration: 1000,
+    			easing: "easeOutExpo",
+    			delay: 1000
+  				});
+  				document.getElementById("tf2").disabled = true;
+    		}
+    		else
+    		{
+    			var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is false.</h6>";
+        		var res = str.fontcolor("red");
+        		document.getElementById("ans9").innerHTML = res;
+    		}
+    
+    		if(document.getElementById("tf3").value == "false")
+    		{
+    			score++;
+    			document.getElementById("scoring").innerHTML = "Your Score is " + score;
+    			document.getElementById("ans10").innerHTML = "Correct";
+    			// Wrap every letter in a span
+				$('.ml611 .letters11').each(function(){
+  				$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter11'>$&</span>"));
+				});
+
+				anime.timeline({loop: true})
+  				.add({
+    			targets: '.ml611 .letter11',
+    			translateY: ["1.1em", 0],
+    			translateZ: 0,
+    			duration: 750,
+    			delay: function(el, i) {
+      			return 50 * i;
+    			}
+  				}).add({
+    			targets: '.ml611',
+    			opacity: 0,
+   	 			duration: 1000,
+    			easing: "easeOutExpo",
+    			delay: 1000
+  				});
+  				document.getElementById("tf3").disabled = true;
+    		}
+    		else
+    		{
+    			var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is false.</h6>";
+        		var res = str.fontcolor("red");
+        		document.getElementById("ans10").innerHTML = res;
+    		}
+
+    		if(document.getElementById("tf4").value == "true")
+    		{
+    			score++;
+    			document.getElementById("scoring").innerHTML = "Your Score is " + score;
+    			document.getElementById("ans11").innerHTML = "Correct";
+    			// Wrap every letter in a span
+				$('.ml612 .letters12').each(function(){
+  				$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter12'>$&</span>"));
+				});
+
+				anime.timeline({loop: true})
+  				.add({
+    			targets: '.ml612 .letter12',
+    			translateY: ["1.1em", 0],
+    			translateZ: 0,
+    			duration: 750,
+    			delay: function(el, i) {
+      			return 50 * i;
+    			}
+  				}).add({
+    			targets: '.ml612',
+    			opacity: 0,
+   	 			duration: 1000,
+    			easing: "easeOutExpo",
+    			delay: 1000
+  				});
+  				document.getElementById("tf4").disabled = true;
+    		}
+    		else
+    		{
+    			var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is true.</h6>";
+        		var res = str.fontcolor("red");
+        		document.getElementById("ans11").innerHTML = res;
+    		}
+    
+    		if(document.getElementById("tf5").value == "true")
+    		{
+    			score++;
+    			document.getElementById("scoring").innerHTML = "Your Score is " + score;
+    			document.getElementById("ans12").innerHTML = "Correct";
+    			// Wrap every letter in a span
+				$('.ml613 .letters13').each(function(){
+  				$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter13'>$&</span>"));
+				});
+
+				anime.timeline({loop: true})
+  				.add({
+    			targets: '.ml613 .letter13',
+    			translateY: ["1.1em", 0],
+    			translateZ: 0,
+    			duration: 750,
+    			delay: function(el, i) {
+      			return 50 * i;
+    			}
+  				}).add({
+    			targets: '.ml613',
+    			opacity: 0,
+   	 			duration: 1000,
+    			easing: "easeOutExpo",
+    			delay: 1000
+  				});
+  				document.getElementById("tf5").disabled = true;
+    		}
+    		else
+    		{
+    			var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is true.</h6>";
+        		var res = str.fontcolor("red");
+        		document.getElementById("ans12").innerHTML = res;
+    		}
+
+        if(document.getElementById("tf6").value == "true")
+        {
+          score++;
+          document.getElementById("scoring").innerHTML = "Your Score is " + score;
+          document.getElementById("ans13").innerHTML = "Correct";
+          // Wrap every letter in a span
+        $('.ml614 .letters14').each(function(){
+          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter14'>$&</span>"));
+        });
+
+        anime.timeline({loop: true})
+          .add({
+          targets: '.ml614 .letter14',
+          translateY: ["1.1em", 0],
+          translateZ: 0,
+          duration: 750,
+          delay: function(el, i) {
+            return 50 * i;
+          }
+          }).add({
+          targets: '.ml614',
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+          });
+          document.getElementById("tf6").disabled = true;
+        }
+        else
+        {
+          var str = "<h6 style='font-size: 12pt; font-weight: bold; font-family: Comic Sans MS, Comic Sans, cursive;'>Oops! The answer is true.</h6>";
+            var res = str.fontcolor("red");
+            document.getElementById("ans13").innerHTML = res;
+        }
+        if(score == 13)
+    {
+      // Wrap every letter in a span
+      document.getElementById("congrats").innerHTML = "Congratulations You solved the worksheet correct";
+      document.getElementById("part1").hidden = false;
+            document.getElementById("goodjob").hidden = false;
+            document.getElementById("part2").hidden = false;
+      $('.ml2').each(function(){
+        $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+      });
+
+      anime.timeline({loop: true})
+        .add({
+        targets: '.ml2 .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: function(el, i) {
+          return 70*i;
+        }
+        }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+        });
+        document.getElementById("totscore").innerHTML = "Total correct answer " + score;
+            document.getElementById("totcoins").innerHTML = "Total coins achieved " + score;
+            document.getElementById("coins").hidden = false;
+            document.getElementById("my_audio").pause();
+      setTimeout(function(){ 
+      document.getElementById("drop").play(); 
+      }, 1000)
+    }
+      }
+      
+    </script>
+</head>
+<body>
+  <audio src="Fast-clock-ticking-sound-effect.mp3" id="my_audio" loop="loop"></audio>
+  <audio src="Train Horn Low-SoundBible.com-1744689113.mp3" id="my_end"></audio>
+  <audio src="coindrop.mp3" id="drop" loop="loop"></audio>
+  <script type="text/javascript">
+    window.onload=function(){
+      document.getElementById("time").innerHTML = timeout();
+      var aud = document.getElementById("my_audio").play();
+    }
+  </script>
+  <div class="d-flex justify-content-center bg-secondary mb-3">
+<img src="Logo.png" width="700px" height="700px" style="position: fixed; margin: 0; z-index: -1; opacity: 0.05">
+</div>
+<p id="demo"></p>
+	<script type="text/javascript">
+        var timeLeft= 7*60;
+    </script>
+    <div class='container angrytext' style="margin-right: -55%; margin-top: -10px; position: absolute; z-index: -1"><img src="clock.png" width="150px" height="150px"></div>
+    <h3><div class="container angrytime" id="time" style="margin-top: 40px; margin-left: 45px; float: left;">Timeout</div></h3><br>
+  <h3 id="scoring" style="font-size: 18pt ; font-family: Comic Sans MS, Comic Sans, cursive; color: #FF791F; float: right;">Your Score is 0</h3><br><br>
+  <center><h2 id="totscore" style="font-family: Comic Sans MS, Comic Sans, cursive; font-weight: bold; color: #FF791F"></h2></center>
+    <center><h2 id="totcoins" style="font-family: Comic Sans MS, Comic Sans, cursive; font-weight: bold; color: #FF791F"></h2></center>
+    <center><img src="coins.gif" id="coins" hidden="true" width="200px" height="200px"></center>
+	<h1 class="ml2" id="congrats" style="text-align: center; font-family: Comic Sans MS, Comic Sans, cursive;"></h1>
+  <div class="container" align="center">
+    <img src="party1.gif" id="part1" hidden="true" width="300px" height="400px">
+    <img src="good job.gif" id="goodjob" hidden="true" width="300px" height="400px">
+    <img src="party1.gif" id="part2" hidden="true" width="300px" height="400px">
+  </div>
+  <br><br><br>
+	<div class="container">
+	<div class="panel panel-warning">
+      <div class="panel-heading"><center><h4 style="font-family: Comic Sans MS, Comic Sans, cursive; font-size: 16pt">Fill in the blanks</h4></center></div>
+      <div class="panel-body">
+    
+	
+		<h6 style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">1. Ability to put yourself in someone else's shoes is known as <input type="text" name="q1" id="a1"> .</h6>
+		<input type="button" style="font-size: 13.5pt ;" class="button button1" id="b1" name="submit" value="Submit" onclick="check1()">
+    <center><input style='font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;' class = 'button button1' type='button' name='show' id='show1' value='Show Answer' onclick='ans1()'></center><br>
+    <script type="text/javascript">
+      function ans1()
+      {
+        document.getElementById("ans1").innerHTML = "empathy";
+        document.getElementById("b1").disabled = true;
+      }
+    </script>
+		<h1 class="ml6">
+  		<span class="text-wrapper">
+    	<span class="letters" id="ans1" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+  		</span>
+		</h1>
+
+    <form name="myform">
+   
+      <h6 class="card-header" style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">2. Empathy helps build ___________ bonds and connection with others.</h6>
+    
+    <div class="card-body">
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q1" id="a11" value="a" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> Stronger</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q1" id="a12" value="b" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> Weaker</h5>
+      <h6 class="ml62">
+        <span class="text-wrapper2">
+        <span class="letters2" id="ans2" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+        </span>
+      </h6>
+    </div>
+    
+      <h6 class="card-header" style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">3. Which of the following sentences denotes empathy? </h6>
+    
+    <div class="card-body">
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q2" id="a21" value="a" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> I feel your pain</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q2" id="a22" value="b" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> I am sorry that you are in pain</h5>
+      <h6 class="ml63">
+        <span class="text-wrapper3">
+        <span class="letters3" id="ans3" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+        </span>
+      </h6>
+    </div>
+   
+      <h6 class="card-header" style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">4. What kind of people are needed in world? </h6>
+  
+    <div class="card-body">
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q3" id="a31" value="a" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> Sympathetic</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q3" id="a32" value="b" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> Empathetic</h5>
+      <h6 class="ml64">
+        <span class="text-wrapper4">
+        <span class="letters4" id="ans4" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+        </span>
+      </h6>
+    </div>
+   
+      <h6 class="card-header" style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">5. My best friend, always thinks he is correct in his opinion. He doesn’t value my views and disregards it every time. I feel very sad about it. What do you think is his problem? </h6>
+ 
+    <div class="card-body">
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q4" id="a41" value="a" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> He is self-centric</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q4" id="a42" value="b" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> He lacks empathy.</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q4" id="a43" value="c" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> He is not respectful.</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q4" id="a44" value="d" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> He lacks understanding.</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q4" id="a45" value="e" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> For him, you don't matter.</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q4" id="a46" value="f" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> All of the above.</h5>
+      <h6 class="ml65">
+        <span class="text-wrapper5">
+        <span class="letters5" id="ans5" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+        </span>
+      </h6>
+    </div>
+
+      <h6 class="card-header" style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">6. I recently got an injury and my friends decided to play indoor and give me a company rather than playing an outdoor sport. I feel </h6>
+  
+    <div class="card-body">
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q5" id="a51" value="a" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> Blessed to have friends who think about me</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q5" id="a52" value="b" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> They are foolish to compromise their play for me</h5>
+      <h6 class="ml66">
+        <span class="text-wrapper6">
+        <span class="letters6" id="ans6" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+        </span>
+      </h6>
+    </div>
+
+      <h6 class="card-header" style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">7. Which of the following resonated the best with the term Empathy </h6>
+    
+    <div class="card-body">
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q6" id="a61" value="a" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> Sympathy</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q6" id="a62" value="b" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> Pity</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q6" id="a63" value="c" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> Understanding</h5>
+      <h5 style="font-family: Comic Sans MS, Comic Sans, cursive;font-size: 13.5pt ;"><input type="radio" name="q6" id="a64" value="d" style="font-size: 12pt ; font-family: Comic Sans MS, Comic Sans, cursive;"> None of the above</h5>
+      <h6 class="ml67">
+        <span class="text-wrapper7">
+        <span class="letters7" id="ans7" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+        </span>
+      </h6>
+    </div>
+    <input style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;" type="button" name="submit" value="Submit" id="s1" onclick="check()" class="btn btn-dark m-auto d-block">
+  
+</div>
+</form>
+		
+	</div>
+
+	<div class="panel panel-warning">
+      <div class="panel-heading"><center><h4 style="font-family: Comic Sans MS, Comic Sans, cursive; font-size: 16pt">True or False</h4></center></div>
+      <div class="panel-body">
+      	<h6 style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">1. Empathy and Sympathy are same <input type="text" name="q1" id="tf1"></h6>
+		<h1 class="ml69">
+  		<span class="text-wrapper9">
+    	<span class="letters9" id="ans8" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+  		</span>
+		</h1>
+
+		<h6 style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">2. Sympathy is what helps people and sympathy is what we should be offering <input type="text" name="q2" id="tf2"></h6>
+		<h1 class="ml610">
+  		<span class="text-wrapper10">
+    	<span class="letters10" id="ans9" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+  		</span>
+		</h1>
+
+		<h6 style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">3. Being judgmental, helps you be empathetic <input type="text" name="q3" id="tf3"></h6>
+		<h1 class="ml611">
+  		<span class="text-wrapper11">
+    	<span class="letters11" id="ans10" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+  		</span>
+		</h1>
+
+		<h6 style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">4. Having past experience of a situation helps to empathize with others? <input type="text" name="q4" id="tf4"></h6>
+		<h1 class="ml612">
+  		<span class="text-wrapper12">
+    	<span class="letters12" id="ans11" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+  		</span>
+		</h1>
+
+		<h6 style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">5. Those who are empathetic can support diversity <input type="text" name="q5" id="tf5"></h6>
+		<h1 class="ml613">
+  		<span class="text-wrapper13">
+    	<span class="letters13" id="ans12" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+  		</span>
+		</h1>
+
+    <h6 style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;">6. You can be a good motivator if you are empathetic <input type="text" name="q6" id="tf6"></h6>
+    <h1 class="ml614">
+      <span class="text-wrapper14">
+      <span class="letters14" id="ans13" style="font-family: Comic Sans MS, Comic Sans, cursive;"></span>
+      </span>
+    </h1>
+    <input style="font-size: 13.5pt ; font-family: Comic Sans MS, Comic Sans, cursive;" type="button" name="submit" value="Submit" id="s2" onclick="submit()" class="btn btn-dark m-auto d-block">
+      </div>
+
+	</div>
+</body>
+</html>
